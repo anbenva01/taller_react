@@ -8,7 +8,13 @@ const PeticionApi = () => {
 
   const obtenerPersonajes = async() =>{
     try {
-      const res = await fetch("https://pokeapi.co/api/v2/pokemon");
+      //const res = await fetch("https://pokeapi.co/api/v2/pokemon/");
+      //const res = await fetch("https://hp-api.onrender.com/api/characters");
+      //const res = await fetch("https://api.sampleapis.com/simpsons/characters");
+      //const res = await fetch("https://rickandmortyapi.com/api/character/?page=${paginacion}");
+      //const res = await fetch("https://spapi.dev/api/characters");
+      //const res = await fetch("https://api.thecatapi.com/v1/images/search");
+      const res = await fetch("https://apisimpsons.fly.dev/api/personajes");
       const {results} = await res.json();
       setPersonajes(results);
       console.log(results);
@@ -20,15 +26,14 @@ const PeticionApi = () => {
 
   return (
     <div>
-      <h1>POKEMON</h1>
-      <button onClick={obtenerPersonajes}>Traer elemento</button>
+      <h1>PERSONAJES DE HARY POTTER</h1>
+      <button onClick={obtenerPersonajes}>Traer personajes</button>
       <button>Anterior</button>
       <button>Siguiente</button>
       {
-        personajes.map(({name, url}) => (
-          <div>
+        personajes.map(({id, name}) => (
+          <div key={id}>
             <h4>{name}</h4>
-            <img src='{url}' alt='{name}'></img>
           </div>
         ))
       }
