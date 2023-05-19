@@ -24,6 +24,18 @@ const PeticionApi = () => {
     
   }
 
+  
+  const myComponentStyle = {
+    backgroundColor: '#4CAF50',
+    border: 'none',
+    color: 'white',
+    padding: '15px 32px',
+    textalign: 'center',
+    textdecoration: 'none',
+    display: 'inline-block',
+    fontsize: '16px',
+ }
+
   const siguiente = async() => {
     setPaginacion(paginacion+1);
     obtenerPersonajes();
@@ -36,9 +48,9 @@ const PeticionApi = () => {
   return (
     <div>
       <h1>PERSONAJES DE RICK AND MORTY</h1>
-      <button onClick={obtenerPersonajes}>Traer personajes</button>
-      <button onClick={anterior}>Anterior</button>
-      <button onClick={siguiente}>Siguiente</button>
+      <button style={myComponentStyle} onClick={obtenerPersonajes}>Traer personajes</button>
+      <button style={myComponentStyle} onClick={anterior}>Anterior</button>
+      <button style={myComponentStyle} onClick={siguiente}>Siguiente</button>
       {
         personajes.map(({id, name,image,gender}) => (
           <div key={id}>

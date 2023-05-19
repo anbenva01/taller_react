@@ -6,7 +6,7 @@ const Variables = () => {
     const texto_alt = "Es una imagen";
   return (
     <div><h1>{ saludo }</h1>
-    <img src='{imagen}' alt='{texto_alt}'></img>
+    <img src={imagen} alt={texto_alt}></img>
     </div>
     
   )
