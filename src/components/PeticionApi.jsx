@@ -1,4 +1,3 @@
-import { async } from 'q';
 import React from 'react'
 
 const PeticionApi = () => {
